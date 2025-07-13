@@ -1,28 +1,36 @@
 // calculadora de partidas ranqueadas
-quantDeVitorias()
-function quantDeVitorias() {
-    let vitorias =0;
-    let derrotas =0;
-    }
+function quantDeVitorias(vitorias, derrotas)
+{
+
+// calculamos o saldo de vitorias dentro da função
+    let saldoVitorias = vitorias - derrotas;
+    let nivel="";
+//usamos if, else if e else para determinar o nivel do herói
     if (vitorias <=10){
-        console.log("O personagem esta no nivel Ferro");
+        nivel = "Ferro"; 
     }
-    else if(vitorias >=11 && vitorias<=20) {
-        console.log("O Personagem esta no nivel Bronze");
+    else if(saldoVitorias >=11 && saldoVitorias<=20) {
+        nivel = "Bronze";
     }
-    else if(vitorias >=21 && vitorias <=50) {
-        console.log("O personagems esta no nivel Prata");
+    else if(saldoVitorias >=21 && saldoVitorias <=50) {
+        nivel = "Prata";
     }
-    else if(vitorias >=51 && vitorias <=80){
-        console.log("O personagem esta no nivel Ouro");
+    else if(saldoVitorias >=51 && saldoVitorias <=80) {
+        nivel = "Ouro";
     }
-    else if(vitorias >=81 && vitorias <=90) {
-        console.log("O personagem esta no nivel Diamante");
+    else if(saldoVitorias >=81 && saldoVitorias <=90) {
+        nivel = "Diamante";
     }
-     else if(vitorias >=91 && vitorias <=100) {
-        console.log("O personagem esta no nivel Lendário");
+     else if(saldoVitorias >=91 && saldoVitorias <=100) {
+        nivel = "Lendário";
     }
     else
     {
-        console.log("O personagem esta no nivel Imortal");
+        nivel = "Imortal";
     }
+// exibir o resultado no console
+    console.log(`O Herói tem saldo de ${saldoVitorias} e está no nível ${nivel}`);
+}
+
+// Exemplo de chamada da função:
+quantDeVitorias(1300, 10);
